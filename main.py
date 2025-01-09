@@ -1,5 +1,6 @@
-# Simple To-Do List Manager
+""" Simple To-Do List Manager"""
 def display_menu():
+    """Displays the main menu for the to-do list."""
     print("\nTo-Do List Menu:")
     print("1. View To-Do List")
     print("2. Add a Task")
@@ -7,6 +8,7 @@ def display_menu():
     print("4. Exit")
 
 def view_tasks(tasks):
+    """Displays the tasks in the to-do list."""
     if not tasks:
         print("\nYour to-do list is empty!")
     else:
@@ -16,11 +18,13 @@ def view_tasks(tasks):
             print(f"{i}. {task} - {status}")
 
 def add_task(tasks):
+    """Adds a new task to the to-do list."""
     task = input("\nEnter the task: ")
     tasks.append((task, False))
     print(f"Task '{task}' added!")
 
 def mark_task_done(tasks):
+    """Marks a specified task as done in the to-do list."""
     view_tasks(tasks)
     if tasks:
         try:
@@ -34,6 +38,7 @@ def mark_task_done(tasks):
             print("Please enter a valid number!")
 
 def main():
+    """The main function to run the To-Do List Manager."""
     tasks = []
     while True:
         display_menu()
